@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+    <div class="home">
+  <div class="left">
+    <h2>Upload Invoice / Receipt</h2>
+
+    <div class="upload-box">
+      <input type="file" (change)="onFileSelected($event)" accept="image/*,.pdf">
+
+      <p>Upload invoice or receipt images/PDFs</p>
+      <small>Supported: JPG, PNG, PDF</small>
+    </div>
+
+    <button (click)="upload()">UPLOAD</button>
+  </div>
+
+  <div class="right">
+    <h2>Model Output</h2>
+
+    <div class="output-box">
+      <p *ngIf="!result">Result will appear here...</p>
+
+      <div *ngIf="result">
+        <pre>{{ result }}</pre>
+      </div>
+    </div>
+  </div>
+
+</div>
